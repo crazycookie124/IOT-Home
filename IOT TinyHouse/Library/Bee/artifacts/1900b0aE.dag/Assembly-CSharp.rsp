@@ -409,6 +409,7 @@
 "Assets/M2MqttUnity/Scripts/BrokerSettings.cs"
 "Assets/M2MqttUnity/Scripts/M2MqttUnityClient.cs"
 "Assets/Scripts/Lamp.cs"
+"Assets/Scripts/Light_System.cs"
 -langversion:9.0
 /deterministic
 /optimize+
