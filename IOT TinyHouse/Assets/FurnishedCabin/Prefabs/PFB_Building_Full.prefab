@@ -794,10 +794,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000012253654838}
+  - {fileID: 4000013400541614}
   - {fileID: 4000012955807648}
+  - {fileID: 4000012262556042}
   - {fileID: 4000012437769886}
-  - {fileID: 4000013139010936}
-  - {fileID: 4000012621731876}
+  - {fileID: 4000012320243426}
   - {fileID: 4000011066226142}
   m_Father: {fileID: 4000010420639692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3581,7 +3582,7 @@ GameObject:
   - component: {fileID: 33000013314316580}
   - component: {fileID: 23000013540608306}
   m_Layer: 0
-  m_Name: PFB_LightCover (5)
+  m_Name: PFB_LightCover (Bathroom2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3595,13 +3596,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010960929148}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.834, y: 2.645, z: -8.447}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000013155277564}
-  m_Father: {fileID: 4000012236790504}
+  m_Father: {fileID: 4000011260505716}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33000013314316580
 MeshFilter:
@@ -3665,7 +3666,7 @@ GameObject:
   - component: {fileID: 33000011582264642}
   - component: {fileID: 23000012279309634}
   m_Layer: 0
-  m_Name: PFB_LightCover (3)
+  m_Name: PFB_LightCover (Kitchen5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4037,7 +4038,7 @@ GameObject:
   - component: {fileID: 33000013830691084}
   - component: {fileID: 23000013520517046}
   m_Layer: 0
-  m_Name: PFB_LightCover (10)
+  m_Name: PFB_LightCover (Bathroom1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4709,7 +4710,7 @@ GameObject:
   - component: {fileID: 33000011091372254}
   - component: {fileID: 23000012029705856}
   m_Layer: 0
-  m_Name: PFB_LightCover (11)
+  m_Name: PFB_LightCover (Bedroom1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4723,13 +4724,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000011296566088}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.289, y: 2.9765, z: -4.6945}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000012004300438}
-  m_Father: {fileID: 4000011260505716}
+  m_Father: {fileID: 3218549509330608423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33000011091372254
 MeshFilter:
@@ -5193,11 +5194,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4000012262556042}
-  - {fileID: 4000013400541614}
-  - {fileID: 4000012320243426}
   - {fileID: 4000013340103056}
-  - {fileID: 4000013543244020}
+  - {fileID: 4000012621731876}
   m_Father: {fileID: 4000010420639692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000011595248958
@@ -5759,7 +5757,7 @@ GameObject:
   - component: {fileID: 33000011920178206}
   - component: {fileID: 23000010941278770}
   m_Layer: 0
-  m_Name: PFB_LightCover (4)
+  m_Name: PFB_LightCover (Bedroom2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5773,13 +5771,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000011778717468}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.289, y: 2.9765, z: -7.762}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000010556427728}
-  m_Father: {fileID: 4000012236790504}
+  m_Father: {fileID: 3218549509330608423}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33000011920178206
 MeshFilter:
@@ -5963,7 +5961,7 @@ GameObject:
   - component: {fileID: 33000010340248958}
   - component: {fileID: 23000011428665082}
   m_Layer: 0
-  m_Name: PFB_LightCover (8)
+  m_Name: PFB_LightCover (Kitchen2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5977,13 +5975,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000011838957902}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.92, y: 2.9765, z: 3.279}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000013718603440}
-  m_Father: {fileID: 4000011260505716}
+  m_Father: {fileID: 4000012236790504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33000010340248958
 MeshFilter:
@@ -7973,6 +7971,7 @@ Transform:
   m_Children:
   - {fileID: 4000012236790504}
   - {fileID: 4000011260505716}
+  - {fileID: 3218549509330608423}
   m_Father: {fileID: 4000011258951830}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1000012532850652
@@ -8633,7 +8632,7 @@ GameObject:
   - component: {fileID: 33000013560865234}
   - component: {fileID: 23000010634595086}
   m_Layer: 0
-  m_Name: PFB_LightCover (6)
+  m_Name: PFB_LightCover (Kitchen7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9099,7 +9098,7 @@ GameObject:
   - component: {fileID: 33000013771640984}
   - component: {fileID: 23000010884922504}
   m_Layer: 0
-  m_Name: PFB_LightCover (1)
+  m_Name: PFB_LightCover (Kitchen1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9303,7 +9302,7 @@ GameObject:
   - component: {fileID: 33000010463470670}
   - component: {fileID: 23000011850450834}
   m_Layer: 0
-  m_Name: PFB_LightCover (9)
+  m_Name: PFB_LightCover (Kitchen6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9317,13 +9316,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000012861216862}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.117, y: 2.977, z: -0.908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000013865415458}
-  m_Father: {fileID: 4000011260505716}
+  m_Father: {fileID: 4000012236790504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33000010463470670
 MeshFilter:
@@ -10117,7 +10116,7 @@ GameObject:
   - component: {fileID: 33000013823888742}
   - component: {fileID: 23000010286258898}
   m_Layer: 0
-  m_Name: PFB_LightCover (7)
+  m_Name: PFB_LightCover (Kitchen4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10131,13 +10130,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000013209413178}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.036, y: 2.9765, z: -0.908}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000011785514878}
-  m_Father: {fileID: 4000011260505716}
+  m_Father: {fileID: 4000012236790504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33000013823888742
 MeshFilter:
@@ -11884,7 +11883,7 @@ GameObject:
   - component: {fileID: 33000012160024930}
   - component: {fileID: 23000013465927262}
   m_Layer: 0
-  m_Name: PFB_LightCover (2)
+  m_Name: PFB_LightCover (Kitchen3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13062,3 +13061,36 @@ LightProbeGroup:
   - {x: 1.235302, y: 0.21936417, z: 4.390977}
   - {x: -0.7244587, y: 0.21936417, z: 4.390977}
   m_Dering: 1
+--- !u!1 &5175210938710542938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3218549509330608423}
+  m_Layer: 0
+  m_Name: BakedLightSet_03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3218549509330608423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175210938710542938}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4000013543244020}
+  - {fileID: 4000013139010936}
+  m_Father: {fileID: 4000010420639692}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
