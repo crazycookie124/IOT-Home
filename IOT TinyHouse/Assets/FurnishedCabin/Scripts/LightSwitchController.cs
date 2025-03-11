@@ -1,17 +1,28 @@
 using UnityEngine;
+using System.Collections;
 
 public class LightSwitchController : MonoBehaviour
 {
     [SerializeField] private Light[] lightsToToggle; // Assign bathroom lights in Inspector
     [SerializeField] private GameObject[] lightCovers; // Assign light covers in Inspector (the objects with the LightShader)
-    [SerializeField] private AudioSource fanAudioSource; // Assign the fan AudioSource in Inspector
+    [SerializeField] private AudioSource fanAudioSource; // Assign the fan AudioSource in Inspector (already attached to the exhaust fan)
+    [SerializeField] private AudioSource clickAudioSource; // Assign the click sound AudioSource in Inspector
     [SerializeField] private Transform playerTransform; // Reference to the player's transform
     [SerializeField] private float maxDistance = 10f; // Max distance for full volume
+    [SerializeField] private Collider bathroomTriggerZone; // Reference to the bathroom trigger zone
 
     private bool isLightOn = false;
+    private bool isPlayerInBathroom = false; // Flag to track if player is in the bathroom
 
     public void ToggleLights()
     {
+        // Play click sound when the switch is clicked
+        if (clickAudioSource != null && !clickAudioSource.isPlaying)
+        {
+            clickAudioSource.Play();
+        }
+
+        // Switch the light state
         isLightOn = !isLightOn;
 
         foreach (Light light in lightsToToggle)
@@ -40,10 +51,11 @@ public class LightSwitchController : MonoBehaviour
                             Color emissionColor = Color.white * 3.4f;  // Multiply color by intensity
                             coverMaterial.SetColor("_EmissionColor", emissionColor);  // Set emission color
                             
-                            // Play fan sound when lights are turned on
+                            // Play fan sound after a short delay (simulating the fan turning on after the click sound)
                             if (fanAudioSource != null && !fanAudioSource.isPlaying)
                             {
-                                fanAudioSource.Play();
+                                // Play fan sound after click sound
+                                StartCoroutine(PlayFanSoundAfterDelay(0.5f)); // Add delay if you want
                             }
                         }
                         else
@@ -62,17 +74,41 @@ public class LightSwitchController : MonoBehaviour
         }
     }
 
+    // Coroutine to play the fan sound after a short delay
+    private IEnumerator PlayFanSoundAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay); // Wait for the specified delay before playing the fan sound
+        if (fanAudioSource != null && !fanAudioSource.isPlaying)
+        {
+            fanAudioSource.Play();
+        }
+    }
+
     private void Update()
     {
-        // Only adjust fan volume if the light is on
-        if (isLightOn && fanAudioSource != null && playerTransform != null)
+        // Check if the player is inside the bathroom area
+        if (bathroomTriggerZone != null)
         {
-            // Calculate the distance between the player and the light switch
-            float distance = Vector3.Distance(playerTransform.position, transform.position);
+            isPlayerInBathroom = bathroomTriggerZone.bounds.Contains(playerTransform.position);
+        }
+
+        // Only adjust fan volume if the light is on and the player is inside the bathroom
+        if (isLightOn && fanAudioSource != null && playerTransform != null && isPlayerInBathroom)
+        {
+            // Calculate the distance between the player and the exhaust fan's position (instead of a new fan position)
+            float distance = Vector3.Distance(playerTransform.position, fanAudioSource.transform.position);
 
             // Clamp the volume based on the distance (volume decreases with distance)
             float volume = Mathf.Clamp01(1 - (distance / maxDistance)); // Volume decreases from 1 to 0 as distance increases
-            fanAudioSource.volume = volume;
+            fanAudioSource.volume = Mathf.Min(volume, 0.2f);
+        }
+        else
+        {
+            // Mute the fan sound if the player is outside the bathroom area
+            if (fanAudioSource != null && fanAudioSource.isPlaying)
+            {
+                fanAudioSource.volume = 0f; // Set to 0 when outside the bathroom area
+            }
         }
     }
 }

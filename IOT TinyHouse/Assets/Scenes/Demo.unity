@@ -155,9 +155,11 @@ MonoBehaviour:
   - {fileID: 274073537}
   - {fileID: 858273058}
   - {fileID: 1249873625}
-  fanAudioSource: {fileID: 1468886879}
+  fanAudioSource: {fileID: 0}
+  clickAudioSource: {fileID: 1468886879}
   playerTransform: {fileID: 0}
   maxDistance: 10
+  bathroomTriggerZone: {fileID: 0}
 --- !u!65 &133312564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -284,6 +286,59 @@ Light:
   m_CorrespondingSourceObject: {fileID: 108000013505251972, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
   m_PrefabInstance: {fileID: 1063491186}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &692304353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692304355}
+  - component: {fileID: 692304354}
+  m_Layer: 0
+  m_Name: Bathroom trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &692304354
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692304353}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.8481884, y: 2.9149413, z: 9.974784}
+  m_Center: {x: -1.3449787, y: 0.4586234, z: 1.4925151}
+--- !u!4 &692304355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692304353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2809472, y: 1.1212562, z: -6.04}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &732235025 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 108000011985963424, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
@@ -419,6 +474,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 175876, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 451208, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -871,10 +930,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d5be9bac8ad494f92c0e73d83c8271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightObjects:
-  - {fileID: 1061766588}
-  - {fileID: 2022588072}
-  lightsOn: 1
 --- !u!108 &1129550454 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 108000013549066802, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
@@ -900,12 +955,15 @@ MonoBehaviour:
   lightsToToggle:
   - {fileID: 1706856768}
   - {fileID: 2072039852}
+  - {fileID: 2072039852}
   lightCovers:
   - {fileID: 1061766588}
   - {fileID: 2022588072}
   fanAudioSource: {fileID: 1743140164}
+  clickAudioSource: {fileID: 1468886879}
   playerTransform: {fileID: 1422884200}
-  maxDistance: 7
+  maxDistance: 5.8
+  bathroomTriggerZone: {fileID: 692304354}
 --- !u!65 &1188362625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1023,9 +1081,11 @@ MonoBehaviour:
   lightCovers:
   - {fileID: 592957192}
   - {fileID: 610356169}
-  fanAudioSource: {fileID: 1468886879}
+  fanAudioSource: {fileID: 0}
+  clickAudioSource: {fileID: 1468886879}
   playerTransform: {fileID: 0}
   maxDistance: 10
+  bathroomTriggerZone: {fileID: 0}
 --- !u!65 &1267622279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1079,10 +1139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d5be9bac8ad494f92c0e73d83c8271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightObjects:
-  - {fileID: 592957192}
-  - {fileID: 610356169}
-  lightsOn: 1
 --- !u!1 &1468886878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,7 +1261,7 @@ Transform:
   m_GameObject: {fileID: 1468886878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.14, y: 1.3354061, z: -6.04}
+  m_LocalPosition: {x: -1.412, y: 1.3354061, z: -6.04}
   m_LocalScale: {x: 1, y: 1, z: 0.9875}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1299,7 +1355,7 @@ Transform:
   m_GameObject: {fileID: 1524741413}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4663312, y: -0.8375822, z: 0.224288, w: 0.17517519}
-  m_LocalPosition: {x: 1.84, y: 11.45, z: 0.067}
+  m_LocalPosition: {x: 2.22, y: 11.25, z: 0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1495,15 +1551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d5be9bac8ad494f92c0e73d83c8271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightObjects:
-  - {fileID: 1865178979}
-  - {fileID: 217759339}
-  - {fileID: 1662774736}
-  - {fileID: 791862981}
-  - {fileID: 274073537}
-  - {fileID: 858273058}
-  - {fileID: 1249873625}
-  lightsOn: 1
 --- !u!1 &1743140163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,9 +1578,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d05e2291603de4f33bcbe968810966fb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d4e86f9cdf2d142489b94425cda2ebc6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.705
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1626,7 +1673,7 @@ Transform:
   m_GameObject: {fileID: 1743140163}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.14, y: 1.3354061, z: -6.04}
+  m_LocalPosition: {x: -2.916, y: 1.3354061, z: -7.502}
   m_LocalScale: {x: 1, y: 1, z: 0.9875}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1785,3 +1832,4 @@ SceneRoots:
   - {fileID: 2271036429879105427}
   - {fileID: 1950485744}
   - {fileID: 1649409539}
+  - {fileID: 692304355}
