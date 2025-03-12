@@ -55,7 +55,7 @@ public class LightSwitchController : MonoBehaviour
                             if (fanAudioSource != null && !fanAudioSource.isPlaying)
                             {
                                 // Play fan sound after click sound
-                                StartCoroutine(PlayFanSoundAfterDelay(0.5f)); // Add delay if you want
+                                StartCoroutine(PlayFanSoundAfterDelay(0.5f)); // Add delay 
                             }
                         }
                         else
@@ -95,12 +95,12 @@ public class LightSwitchController : MonoBehaviour
         // Only adjust fan volume if the light is on and the player is inside the bathroom
         if (isLightOn && fanAudioSource != null && playerTransform != null && isPlayerInBathroom)
         {
-            // Calculate the distance between the player and the exhaust fan's position (instead of a new fan position)
+            // Calculate the distance between the player and the exhaust fan's position
             float distance = Vector3.Distance(playerTransform.position, fanAudioSource.transform.position);
 
             // Clamp the volume based on the distance (volume decreases with distance)
             float volume = Mathf.Clamp01(1 - (distance / maxDistance)); // Volume decreases from 1 to 0 as distance increases
-            fanAudioSource.volume = Mathf.Min(volume, 0.2f);
+            fanAudioSource.volume = Mathf.Min(volume, 0.2f); //Limit the max volume to 0.2--otherwise too loud
         }
         else
         {
