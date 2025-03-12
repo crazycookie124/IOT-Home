@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a1a92a95a3fc948bfa09585ad86413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightObjects:
+  lightSources:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

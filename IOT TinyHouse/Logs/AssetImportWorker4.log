@@ -1,0 +1,429 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.58f1 (ed7f6eacb62e) revision 15564654'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'en' Physical Memory: 32694 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\software\2022.3.58f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+C:/Users/Evie/Documents/UAL/Git/IOT-Home/IOT TinyHouse
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+64790
+Successfully changed project path to: C:/Users/Evie/Documents/UAL/Git/IOT-Home/IOT TinyHouse
+C:/Users/Evie/Documents/UAL/Git/IOT-Home/IOT TinyHouse
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [21988]  Target information:
+
+Player connection [21988]  * "[IP] 192.168.1.193 [Port] 0 [Flags] 2 [Guid] 994447839 [EditorId] 994447839 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-KAFSR43) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [21988] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [21988] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Refreshing native plugins compatible for Editor in 29.82 ms, found 12 plugins.
+Preloading 1 native plugins for Editor in 0.62 ms.
+Initialize engine version: 2022.3.58f1 (ed7f6eacb62e)
+[Subsystems] Discovering subsystems at path D:/software/2022.3.58f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Evie/Documents/UAL/Git/IOT-Home/IOT TinyHouse/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 Ti (ID=0x2486)
+    Vendor:   NVIDIA
+    VRAM:     8024 MB
+    Driver:   32.0.15.6636
+Initialize mono
+Mono path[0] = 'D:/software/2022.3.58f1/Editor/Data/Managed'
+Mono path[1] = 'D:/software/2022.3.58f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/software/2022.3.58f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56240
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/software/2022.3.58f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: D:/software/2022.3.58f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: D:/software/2022.3.58f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
+Registered in 0.005604 seconds.
+- Loaded All Assemblies, in  0.300 seconds
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 209 ms
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.455 seconds
+Domain Reload Profiling: 755ms
+	BeginReloadAssembly (105ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (122ms)
+		LoadAssemblies (106ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (119ms)
+			TypeCache.Refresh (118ms)
+				TypeCache.ScanAssembly (106ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (456ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (423ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (286ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (99ms)
+			ProcessInitializeOnLoadMethodAttributes (33ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.544 seconds
+Native extension for UWP target not found
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in .\Library\PackageCache\com.unity.xr.oculus@4.5.0\Runtime\OculusLoader.cs:311 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0008c] in .\Library\PackageCache\com.unity.xr.oculus@4.5.0\Runtime\OculusLoader.cs:296 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <d4e8a951dcb549d5a33beceb2b3afcb3>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <d4e8a951dcb549d5a33beceb2b3afcb3>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <d4e8a951dcb549d5a33beceb2b3afcb3>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <a1e74e68762e41e29cbd0ebce875288c>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  0.539 seconds
+Domain Reload Profiling: 1081ms
+	BeginReloadAssembly (134ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (18ms)
+	RebuildCommonClasses (25ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (345ms)
+		LoadAssemblies (273ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (160ms)
+			TypeCache.Refresh (134ms)
+				TypeCache.ScanAssembly (121ms)
+			ScanForSourceGeneratedMonoScriptInfo (21ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (539ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (412ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (54ms)
+			ProcessInitializeOnLoadAttributes (284ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (2ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 13.22 ms, found 12 plugins.
+Preloading 1 native plugins for Editor in 0.08 ms.
+Unloading 4022 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 77 unused Assets / (83.9 KB). Loaded Objects now: 4496.
+Memory consumption went from 141.0 MB to 140.9 MB.
+Total: 3.204200 ms (FindLiveObjects: 0.245400 ms CreateObjectMapping: 0.166800 ms MarkObjects: 2.669100 ms  DeleteObjects: 0.122100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 2107300.962517 seconds.
+  path: Assets/FurnishedCabin/Meshes
+  artifactKey: Guid(2dd155a555af343988bc46a08811d85b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes using Guid(2dd155a555af343988bc46a08811d85b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '877e83452960e0b35e05cdf0af266d7e') in 0.002615 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.072867 seconds.
+  path: Assets/FurnishedCabin/Meshes/Basket.fbx
+  artifactKey: Guid(b2faaff453e184e16b2caab0bf62ec2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Basket.fbx using Guid(b2faaff453e184e16b2caab0bf62ec2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'df03bd139a1a1e27e0882decab573c0c') in 0.140594 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FurnishedCabin/Meshes/DoorSingle.fbx
+  artifactKey: Guid(03e880133708442c4b8533df94284924) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/DoorSingle.fbx using Guid(03e880133708442c4b8533df94284924) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5a7234036c45053cef83e65b2ce82f1b') in 0.021206 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/FurnishedCabin/Meshes/Toilet.fbx
+  artifactKey: Guid(361d39cd9e9d9495aac07c02c06df127) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Toilet.fbx using Guid(361d39cd9e9d9495aac07c02c06df127) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5d85877cb1c708313151ebf9bf86719f') in 0.026194 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/FurnishedCabin/Meshes/Sofa.fbx
+  artifactKey: Guid(0cf5e90e2357e254fb0b8e86b93898a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Sofa.fbx using Guid(0cf5e90e2357e254fb0b8e86b93898a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7b4afc8d3093c3d4cf54e6d74a9fd419') in 0.029861 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/FurnishedCabin/Meshes/DoorDouble.fbx
+  artifactKey: Guid(0679e7662e39f4c88a029a5a019f1019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/DoorDouble.fbx using Guid(0679e7662e39f4c88a029a5a019f1019) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '710a264e827ace7f4abc2b1c74fe4869') in 0.035124 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/FurnishedCabin/Meshes/Fireplace.fbx
+  artifactKey: Guid(91dd9734515124a55a7601f751109097) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Fireplace.fbx using Guid(91dd9734515124a55a7601f751109097) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8247689d89270f61afc7616b4004f348') in 0.027136 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FurnishedCabin/Meshes/Curtain.fbx
+  artifactKey: Guid(2b9feae22f933444ea115e64ae65fe7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Curtain.fbx using Guid(2b9feae22f933444ea115e64ae65fe7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '10e00987fe0a27797246272a45a3c4f3') in 0.028692 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/FurnishedCabin/Meshes/Stove.fbx
+  artifactKey: Guid(22ec64bba89e94704b5b0eeee5767c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Stove.fbx using Guid(22ec64bba89e94704b5b0eeee5767c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '128a4c0e59479c0623ff91334ca0bf5a') in 0.029156 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/FurnishedCabin/Meshes/CurtainSmall.fbx
+  artifactKey: Guid(43d79aaf9fe2b4ccaa12db9228294f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/CurtainSmall.fbx using Guid(43d79aaf9fe2b4ccaa12db9228294f34) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9042e32c31d04d8dbe1a8b02e29b5729') in 0.030052 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FurnishedCabin/Meshes/SofaSmall.fbx
+  artifactKey: Guid(5ced1428a23f623448aad5b76e93dd8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/SofaSmall.fbx using Guid(5ced1428a23f623448aad5b76e93dd8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b0891c5d01e818ffcfa3a60a42bc0b57') in 0.022910 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 1.780380 seconds.
+  path: Assets/FurnishedCabin/Meshes/Materials
+  artifactKey: Guid(72d3c1456e52d469a9657a2c934834ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Materials using Guid(72d3c1456e52d469a9657a2c934834ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b962246f6216e57c935e75f1d7279827') in 0.000550 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.154254 seconds.
+  path: Assets/FurnishedCabin/Meshes/Materials/Bathroom_Oven_MAT.mat
+  artifactKey: Guid(20e170f662817d44383bf29029741cd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Materials/Bathroom_Oven_MAT.mat using Guid(20e170f662817d44383bf29029741cd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '493aa9d5f63632c9acf53e855be28dbd') in 0.038899 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 31.443321 seconds.
+  path: Assets/FurnishedCabin/Animations
+  artifactKey: Guid(1bee12285e24744ad9a8a059b0912d12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Animations using Guid(1bee12285e24744ad9a8a059b0912d12) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a9fafa0468fe3030d05c5548f82af68d') in 0.000619 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 58.231603 seconds.
+  path: Assets/FurnishedCabin/Meshes/Materials/Lights_towel_MAT.mat
+  artifactKey: Guid(cf3d52b3b76bf4c4ebf9164c88c1b585) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Materials/Lights_towel_MAT.mat using Guid(cf3d52b3b76bf4c4ebf9164c88c1b585) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5e5f5fcf6a71137c9cd252d38b0257fd') in 0.019891 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 19.648340 seconds.
+  path: Assets/FurnishedCabin/Meshes/Materials/LR_Lights.mat
+  artifactKey: Guid(eba4a2170f5fb9c438b802c3e8b1feee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Materials/LR_Lights.mat using Guid(eba4a2170f5fb9c438b802c3e8b1feee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9b0a722aaec76e03ef7d8a3f076a3dc2') in 0.021387 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 5
+========================================================================
+Received Import Request.
+  Time since last request: 29.035995 seconds.
+  path: Assets/HouseAssets/glass.mat
+  artifactKey: Guid(dbdb62ad91470054f8ffa6129b69cc4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HouseAssets/glass.mat using Guid(dbdb62ad91470054f8ffa6129b69cc4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'effa94de2a0eb451c9fe505fe13ace6e') in 0.023302 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 8.307051 seconds.
+  path: Assets/FurnishedCabin/Meshes/Fridge.fbx
+  artifactKey: Guid(5de4dc4e4227b4ebbb0d9d8e1fc89801) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Fridge.fbx using Guid(5de4dc4e4227b4ebbb0d9d8e1fc89801) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a7b79e71fc2f841fd0d009bee70975e7') in 0.029516 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/FurnishedCabin/Meshes/Towel.fbx
+  artifactKey: Guid(c3c06bf3731094f39bb21b24568f8a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Towel.fbx using Guid(c3c06bf3731094f39bb21b24568f8a72) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '968c6b69c62bc353e4d8536eb7d1c370') in 0.064790 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/FurnishedCabin/Meshes/Lightswitch.fbx
+  artifactKey: Guid(05c7d60c5a0554567951323c7c871432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FurnishedCabin/Meshes/Lightswitch.fbx using Guid(05c7d60c5a0554567951323c7c871432) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6f02fe5ea4c9d993f806b2461c04199f') in 0.063579 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
