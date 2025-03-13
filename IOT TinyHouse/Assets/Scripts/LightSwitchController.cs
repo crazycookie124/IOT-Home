@@ -3,37 +3,101 @@ using System.Collections;
 
 public class LightSwitchController : MonoBehaviour
 {
-    [SerializeField] private Light[] lightsToToggle; // Assign bathroom lights in Inspector
-    [SerializeField] private GameObject[] lightCovers; // Assign light covers in Inspector (the objects with the LightShader)
-    [SerializeField] private AudioSource fanAudioSource; // Assign the fan AudioSource in Inspector (already attached to the exhaust fan)
-    [SerializeField] private AudioSource clickAudioSource; // Assign the click sound AudioSource in Inspector
-    [SerializeField] private Transform playerTransform; // Reference to the player's transform
-    [SerializeField] private float maxDistance = 10f; // Max distance for full volume
-    [SerializeField] private Collider bathroomTriggerZone; // Reference to the bathroom trigger zone
+    [SerializeField] private Light[] lightsToToggle;
+    [SerializeField] private GameObject[] lightCovers;
+    [SerializeField] private AudioSource fanAudioSource;
+    [SerializeField] private AudioSource clickAudioSource;
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private CharacterController playerController;
+    [SerializeField] private float maxDistance = 10f;
+    [SerializeField] private Collider bathroomTriggerZone;
+    [SerializeField] private Collider frontHouseTriggerZone;
 
-    private bool isLightOn = false;
-    private bool isPlayerInBathroom = false; // Flag to track if player is in the bathroom
+    public bool isLightOn = false;
+    private bool isPlayerInBathroom = false;
+    private bool isPlayerInFrontHouse = false;
+    private float frontHouseIdleTime = 0f;
+    private const float idleTimeout = 5f;
+    private bool isPlayerMoving = false;
+    private bool isFrontHouseLightOn = false;
+
+    private void Start()
+    {
+        ResetControlledLights();  // Turn off all switch-controlled lights at the start
+    }
+
+    private void Update()
+    {
+        if (bathroomTriggerZone != null)
+        {
+            isPlayerInBathroom = bathroomTriggerZone.bounds.Contains(playerTransform.position);
+        }
+
+        if (isLightOn && fanAudioSource != null && playerTransform != null && isPlayerInBathroom)
+        {
+            float distance = Vector3.Distance(playerTransform.position, fanAudioSource.transform.position);
+            float volume = Mathf.Clamp01(1 - (distance / maxDistance));
+            fanAudioSource.volume = Mathf.Min(volume, 0.2f);
+        }
+        else
+        {
+            if (fanAudioSource != null && fanAudioSource.isPlaying)
+            {
+                fanAudioSource.volume = 0f;
+            }
+        }
+
+        if (frontHouseTriggerZone != null)
+        {
+            isPlayerInFrontHouse = frontHouseTriggerZone.bounds.Contains(playerTransform.position);
+
+            if (isPlayerInFrontHouse)
+            {
+                float horizInput = Input.GetAxis("Horizontal");
+                float vertInput = Input.GetAxis("Vertical");
+                isPlayerMoving = Mathf.Abs(horizInput) > 0.1f || Mathf.Abs(vertInput) > 0.1f;
+
+                if (isPlayerMoving && !isLightOn)
+                {
+                    ToggleLights();
+                    isFrontHouseLightOn = true;
+                }
+
+                if (isPlayerMoving)
+                {
+                    frontHouseIdleTime = 0f;
+                }
+                else
+                {
+                    frontHouseIdleTime += Time.deltaTime;
+                }
+
+                if (frontHouseIdleTime >= idleTimeout && isLightOn)
+                {
+                    ToggleLights();
+                    isFrontHouseLightOn = false;
+                }
+            }
+        } 
+    }
 
     public void ToggleLights()
     {
-        // Play click sound when the switch is clicked
         if (clickAudioSource != null && !clickAudioSource.isPlaying)
         {
             clickAudioSource.Play();
         }
 
-        // Switch the light state
         isLightOn = !isLightOn;
 
         foreach (Light light in lightsToToggle)
         {
             if (light != null)
             {
-                light.enabled = isLightOn; // Turns the light ON/OFF
+                light.enabled = isLightOn;
             }
         }
 
-        // Toggle emission on the LightCover objects when the lights are toggled
         foreach (GameObject cover in lightCovers)
         {
             if (cover != null)
@@ -47,22 +111,19 @@ public class LightSwitchController : MonoBehaviour
                     {
                         if (isLightOn)
                         {
-                            coverMaterial.EnableKeyword("_EMISSION");  // Enable emission
-                            Color emissionColor = Color.white * 3.4f;  // Multiply color by intensity
-                            coverMaterial.SetColor("_EmissionColor", emissionColor);  // Set emission color
-                            
-                            // Play fan sound after a short delay (simulating the fan turning on after the click sound)
+                            coverMaterial.EnableKeyword("_EMISSION");
+                            Color emissionColor = Color.white * 3.4f;
+                            coverMaterial.SetColor("_EmissionColor", emissionColor);
+
                             if (fanAudioSource != null && !fanAudioSource.isPlaying)
                             {
-                                // Play fan sound after click sound
-                                StartCoroutine(PlayFanSoundAfterDelay(0.5f)); // Add delay 
+                                StartCoroutine(PlayFanSoundAfterDelay(0.5f));
                             }
                         }
                         else
                         {
-                            coverMaterial.DisableKeyword("_EMISSION");  // Disable emission
-                            
-                            // Stop fan sound when lights are turned off
+                            coverMaterial.DisableKeyword("_EMISSION");
+
                             if (fanAudioSource != null && fanAudioSource.isPlaying)
                             {
                                 fanAudioSource.Stop();
@@ -74,40 +135,59 @@ public class LightSwitchController : MonoBehaviour
         }
     }
 
-    // Coroutine to play the fan sound after a short delay
     private IEnumerator PlayFanSoundAfterDelay(float delay)
     {
-        yield return new WaitForSeconds(delay); // Wait for the specified delay before playing the fan sound
+        yield return new WaitForSeconds(delay);
         if (fanAudioSource != null && !fanAudioSource.isPlaying)
         {
             fanAudioSource.Play();
         }
     }
 
-    private void Update()
+    private void ResetControlledLights()
     {
-        // Check if the player is inside the bathroom area
-        if (bathroomTriggerZone != null)
-        {
-            isPlayerInBathroom = bathroomTriggerZone.bounds.Contains(playerTransform.position);
-        }
+        LightSwitchController[] lightControllers = FindObjectsOfType<LightSwitchController>();
 
-        // Only adjust fan volume if the light is on and the player is inside the bathroom
-        if (isLightOn && fanAudioSource != null && playerTransform != null && isPlayerInBathroom)
+        foreach (LightSwitchController controller in lightControllers)
         {
-            // Calculate the distance between the player and the exhaust fan's position
-            float distance = Vector3.Distance(playerTransform.position, fanAudioSource.transform.position);
-
-            // Clamp the volume based on the distance (volume decreases with distance)
-            float volume = Mathf.Clamp01(1 - (distance / maxDistance)); // Volume decreases from 1 to 0 as distance increases
-            fanAudioSource.volume = Mathf.Min(volume, 0.2f); //Limit the max volume to 0.2--otherwise too loud
+            controller.SetLightState(false);
         }
-        else
+    }
+
+    public void SetLightState(bool state)
+    {
+        isLightOn = state;
+        foreach (Light light in lightsToToggle)
         {
-            // Mute the fan sound if the player is outside the bathroom area
-            if (fanAudioSource != null && fanAudioSource.isPlaying)
+            if (light != null)
             {
-                fanAudioSource.volume = 0f; // Set to 0 when outside the bathroom area
+                light.enabled = state;
+            }
+        }
+
+        foreach (GameObject cover in lightCovers)
+        {
+            if (cover != null)
+            {
+                Renderer coverRenderer = cover.GetComponent<Renderer>();
+                if (coverRenderer != null)
+                {
+                    Material coverMaterial = coverRenderer.material;
+
+                    if (coverMaterial != null)
+                    {
+                        if (state)
+                        {
+                            coverMaterial.EnableKeyword("_EMISSION");
+                            Color emissionColor = Color.white * 3.4f;
+                            coverMaterial.SetColor("_EmissionColor", emissionColor);
+                        }
+                        else
+                        {
+                            coverMaterial.DisableKeyword("_EMISSION");
+                        }
+                    }
+                }
             }
         }
     }

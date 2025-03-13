@@ -158,8 +158,11 @@ MonoBehaviour:
   fanAudioSource: {fileID: 0}
   clickAudioSource: {fileID: 1468886879}
   playerTransform: {fileID: 0}
+  playerController: {fileID: 0}
   maxDistance: 10
   bathroomTriggerZone: {fileID: 0}
+  frontHouseTriggerZone: {fileID: 0}
+  isLightOn: 0
 --- !u!65 &133312564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -304,7 +307,7 @@ MonoBehaviour:
   autoConnect: 1
   mqttUserName: student
   mqttPassword: austral-clash-sawyer-blaze
-  frontRoomSwitchController: {fileID: 0}
+  frontSwitchController: {fileID: 466199517}
   kitchenSwitchController: {fileID: 133312563}
   bathroomSwitchController: {fileID: 1188362624}
   bedroomSwitchController: {fileID: 1267622278}
@@ -323,6 +326,190 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &466199515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 466199516}
+  - component: {fileID: 466199517}
+  m_Layer: 0
+  m_Name: Front House Light Sensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &466199516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466199515}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.3710093, y: 2.0273972, z: 6.628712}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 663249316}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &466199517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466199515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ac82bdb561c489497124c2b5663d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightsToToggle:
+  - {fileID: 1140120300}
+  lightCovers: []
+  fanAudioSource: {fileID: 0}
+  clickAudioSource: {fileID: 0}
+  playerTransform: {fileID: 1422884200}
+  playerController: {fileID: 1422884202}
+  maxDistance: 10
+  bathroomTriggerZone: {fileID: 0}
+  frontHouseTriggerZone: {fileID: 1570331185}
+  isLightOn: 0
+--- !u!1 &478381778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 478381779}
+  - component: {fileID: 478381783}
+  - component: {fileID: 478381782}
+  - component: {fileID: 478381781}
+  - component: {fileID: 478381780}
+  m_Layer: 8
+  m_Name: PFB_Lightswitch (FrontHouse)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 0
+--- !u!4 &478381779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478381778}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.0062803305, z: -0, w: 0.9999803}
+  m_LocalPosition: {x: -3.084, y: 1.642, z: 5.435}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 663249316}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.72, z: 0}
+--- !u!65 &478381780
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478381778}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8467894, y: 2.565941, z: 2.4671493}
+  m_Center: {x: -0.3008479, y: -0.26568663, z: 1.0998707}
+--- !u!114 &478381781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478381778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ac82bdb561c489497124c2b5663d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightsToToggle:
+  - {fileID: 1140120300}
+  lightCovers: []
+  fanAudioSource: {fileID: 0}
+  clickAudioSource: {fileID: 1468886879}
+  playerTransform: {fileID: 0}
+  playerController: {fileID: 0}
+  maxDistance: 10
+  bathroomTriggerZone: {fileID: 0}
+  frontHouseTriggerZone: {fileID: 0}
+  isLightOn: 0
+--- !u!23 &478381782
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478381778}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 4294967295
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: cf3d52b3b76bf4c4ebf9164c88c1b585, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &478381783
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478381778}
+  m_Mesh: {fileID: 4300002, guid: 05c7d60c5a0554567951323c7c871432, type: 3}
 --- !u!1 &592957192 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000011296566088, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
@@ -341,6 +528,11 @@ Transform:
 --- !u!108 &644439189 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 108000013505251972, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
+  m_PrefabInstance: {fileID: 1063491186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &663249316 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000011258951830, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
   m_PrefabInstance: {fileID: 1063491186}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &692304353
@@ -944,6 +1136,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 451208, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1468886880}
+    - targetCorrespondingSourceObject: {fileID: 4000011258951830, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 478381779}
+    - targetCorrespondingSourceObject: {fileID: 4000011258951830, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 466199516}
+    - targetCorrespondingSourceObject: {fileID: 4000010420639692, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1140120301}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1000011952006634, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
       insertIndex: -1
@@ -963,38 +1164,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1000012026813746, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1188362624}
-    - targetCorrespondingSourceObject: {fileID: 1000010387517836, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1727355046}
-    - targetCorrespondingSourceObject: {fileID: 1000011560320344, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1119477376}
-    - targetCorrespondingSourceObject: {fileID: 5175210938710542938, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1427236804}
   m_SourcePrefab: {fileID: 100100000, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
 --- !u!108 &1072584337 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 108000013649937482, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
   m_PrefabInstance: {fileID: 1063491186}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1119477374 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000011560320344, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
-  m_PrefabInstance: {fileID: 1063491186}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1119477376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119477374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d5be9bac8ad494f92c0e73d83c8271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &1129550454 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 108000013549066802, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
@@ -1028,8 +1203,8 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.3915094, g: 0.6816554, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.8448761, b: 0.6179246, a: 1}
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1087,12 +1262,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140120299}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.46, y: 3.29, z: 6.584}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.531, y: 3.317, z: 6.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1464499239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1188362620 stripped
 GameObject:
@@ -1121,8 +1296,11 @@ MonoBehaviour:
   fanAudioSource: {fileID: 1743140164}
   clickAudioSource: {fileID: 1468886879}
   playerTransform: {fileID: 1422884200}
+  playerController: {fileID: 0}
   maxDistance: 5.8
   bathroomTriggerZone: {fileID: 692304354}
+  frontHouseTriggerZone: {fileID: 0}
+  isLightOn: 0
 --- !u!65 &1188362625
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1318,8 +1496,11 @@ MonoBehaviour:
   fanAudioSource: {fileID: 0}
   clickAudioSource: {fileID: 1468886879}
   playerTransform: {fileID: 0}
+  playerController: {fileID: 0}
   maxDistance: 10
   bathroomTriggerZone: {fileID: 0}
+  frontHouseTriggerZone: {fileID: 0}
+  isLightOn: 0
 --- !u!65 &1267622279
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1356,23 +1537,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2271036430416539210, guid: d512ebcdf02532446b58dc05fc0f10d2, type: 3}
   m_PrefabInstance: {fileID: 2271036429879105427}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1427236802 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5175210938710542938, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
+--- !u!143 &1422884202 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 2271036430416539211, guid: d512ebcdf02532446b58dc05fc0f10d2, type: 3}
+  m_PrefabInstance: {fileID: 2271036429879105427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1464499239 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4000010420639692, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
   m_PrefabInstance: {fileID: 1063491186}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1427236804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427236802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d5be9bac8ad494f92c0e73d83c8271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1468886878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,7 +1784,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1570331186}
   - component: {fileID: 1570331185}
-  - component: {fileID: 1570331184}
   m_Layer: 0
   m_Name: Front House trigger
   m_TagString: Untagged
@@ -1618,26 +1791,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1570331184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570331183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ac82bdb561c489497124c2b5663d90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsToToggle:
-  - {fileID: 1140120300}
-  lightCovers: []
-  fanAudioSource: {fileID: 0}
-  clickAudioSource: {fileID: 0}
-  playerTransform: {fileID: 0}
-  maxDistance: 10
-  bathroomTriggerZone: {fileID: 0}
 --- !u!65 &1570331185
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1657,8 +1810,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 8.508156, y: 3.246731, z: 5.001842}
-  m_Center: {x: -1.2180886, y: -0.4565755, z: 1.3066247}
+  m_Size: {x: 8.508156, y: 5.0021048, z: 5.001842}
+  m_Center: {x: -1.2180886, y: 0.4211111, z: 1.3066247}
 --- !u!4 &1570331186
 Transform:
   m_ObjectHideFlags: 0
@@ -1748,23 +1901,6 @@ Light:
   m_CorrespondingSourceObject: {fileID: 108000013217776896, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
   m_PrefabInstance: {fileID: 1063491186}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1727355044 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000010387517836, guid: 23d25b2e2d4364dd4b92c52ef40cd36e, type: 3}
-  m_PrefabInstance: {fileID: 1063491186}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1727355046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727355044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d5be9bac8ad494f92c0e73d83c8271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1743140163
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,5 +2184,4 @@ SceneRoots:
   - {fileID: 692304355}
   - {fileID: 1230430778}
   - {fileID: 1570331186}
-  - {fileID: 1140120301}
   - {fileID: 434384238}

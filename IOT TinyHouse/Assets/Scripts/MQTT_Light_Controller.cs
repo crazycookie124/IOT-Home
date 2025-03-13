@@ -6,8 +6,8 @@ using M2MqttUnity;
 
 public class MqttLightController : M2MqttUnityClient
 {
-    // Add references to the LightSwitchController for each room
-    public LightSwitchController frontRoomSwitchController;
+    // References to LightSwitchController for each room
+    public LightSwitchController frontSwitchController;
     public LightSwitchController kitchenSwitchController;
     public LightSwitchController bathroomSwitchController;
     public LightSwitchController bedroomSwitchController;
@@ -17,12 +17,20 @@ public class MqttLightController : M2MqttUnityClient
     protected override void SubscribeTopics()
     {
         client.Subscribe(new string[] { MQTT_TOPIC_SUB }, new byte[] { MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE });
+        Debug.Log("[MQTT] Subscribed to topic: " + MQTT_TOPIC_SUB);
     }
 
     protected override void DecodeMessage(string topic, byte[] message)
     {
         string msg = System.Text.Encoding.UTF8.GetString(message);
-        Debug.Log("Received: " + msg);
+        Debug.Log($"[MQTT] Received message: {msg}");
+
+        if (string.IsNullOrWhiteSpace(msg))
+        {
+            Debug.LogError("[MQTT] Received an empty message!");
+            return;
+        }
+
         ProcessMessage(msg);
     }
 
@@ -30,48 +38,72 @@ public class MqttLightController : M2MqttUnityClient
     {
         try
         {
-            // Ensure the message contains the expected keys (room, component, value)
-            if (msg.Contains("\"component\":\"led\""))
+            bool isLedComponent = msg.Contains("\"component\":\"led\"");
+            if (!isLedComponent)
             {
-                if (msg.Contains("\"room\":\"front\""))
-                {
-                    // Trigger light controller for front room
-                    ToggleRoomLight(frontRoomSwitchController, msg);
-                }
-                else if (msg.Contains("\"room\":\"living\""))
-                {
-                    // Trigger light controller for kitchen and living room
-                    ToggleRoomLight(kitchenSwitchController, msg);
-                }
-                else if (msg.Contains("\"room\":\"bathroom\""))
-                {
-                    // Trigger light controller for bathroom (and fan if necessary)
-                    ToggleRoomLight(bathroomSwitchController, msg);
-                }
-                else if (msg.Contains("\"room\":\"bedroom\""))
-                {
-                    // Trigger light controller for bedroom
-                    ToggleRoomLight(bedroomSwitchController, msg);
-                }
+                Debug.Log($"[MQTT] Message ignored (not a LED component): {msg}");
+                return;
+            }
+
+            LightSwitchController targetRoom = null;
+
+            if (msg.Contains("\"room\":\"front\""))
+            {
+                targetRoom = frontSwitchController;
+                Debug.Log("[MQTT] Identified 'front' room.");
+            }
+            else if (msg.Contains("\"room\":\"living\""))
+            {
+                targetRoom = kitchenSwitchController;
+                Debug.Log("[MQTT] Identified 'living' room.");
+            }
+            else if (msg.Contains("\"room\":\"bathroom\""))
+            {
+                targetRoom = bathroomSwitchController;
+                Debug.Log("[MQTT] Identified 'bathroom' room.");
+            }
+            else if (msg.Contains("\"room\":\"bedroom\""))
+            {
+                targetRoom = bedroomSwitchController;
+                Debug.Log("[MQTT] Identified 'bedroom' room.");
+            }
+            else
+            {
+                Debug.LogWarning("[MQTT] Unknown room, ignoring message.");
+                return;
+            }
+
+            if (targetRoom == null)
+            {
+                Debug.LogError($"[MQTT] LightSwitchController for the room is not assigned!");
+                return;
+            }
+
+            bool turnOn = msg.Contains("\"value\":1");
+            bool turnOff = msg.Contains("\"value\":0");
+
+            if (!turnOn && !turnOff)
+            {
+                Debug.LogWarning("[MQTT] Message doesn't contain a valid 'value' field (1 or 0), ignoring.");
+                return;
+            }
+
+            Debug.Log($"[MQTT] Toggling light for {targetRoom.name}. Turn On: {turnOn}");
+
+            // Check current light state before toggling
+            if ((turnOn && !targetRoom.isLightOn) || (turnOff && targetRoom.isLightOn))
+            {
+                targetRoom.ToggleLights();
+                Debug.Log($"[MQTT] Light toggled successfully for {targetRoom.name}.");
+            }
+            else
+            {
+                Debug.Log($"[MQTT] Light state unchanged for {targetRoom.name} (already in correct state).");
             }
         }
         catch (Exception e)
         {
-            Debug.LogError("Error processing MQTT message: " + e.Message);
-        }
-    }
-
-    private void ToggleRoomLight(LightSwitchController roomSwitchController, string msg)
-    {
-        if (msg.Contains("\"value\":1"))
-        {
-            // If the message indicates the light should be ON, trigger the light switch controller
-            roomSwitchController.ToggleLights();
-        }
-        else if (msg.Contains("\"value\":0"))
-        {
-            // If the message indicates the light should be OFF, trigger the light switch controller
-            roomSwitchController.ToggleLights();
+            Debug.LogError("[MQTT] Error processing MQTT message: " + e.Message);
         }
     }
 }
