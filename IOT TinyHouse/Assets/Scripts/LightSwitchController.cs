@@ -12,7 +12,9 @@ public class LightSwitchController : MonoBehaviour
     [SerializeField] private float maxDistance = 10f;
     [SerializeField] private Collider bathroomTriggerZone;
     [SerializeField] private Collider frontHouseTriggerZone;
+    [SerializeField] private GameObject fan;
 
+    public float fanRotationSpeed = 200f;
     public bool isLightOn = false;
     private bool isPlayerInBathroom = false;
     private bool isPlayerInFrontHouse = false;
@@ -35,6 +37,7 @@ public class LightSwitchController : MonoBehaviour
 
         if (isLightOn && fanAudioSource != null && playerTransform != null && isPlayerInBathroom)
         {
+            RotateFan();
             float distance = Vector3.Distance(playerTransform.position, fanAudioSource.transform.position);
             float volume = Mathf.Clamp01(1 - (distance / maxDistance));
             fanAudioSource.volume = Mathf.Min(volume, 0.2f);
@@ -80,8 +83,14 @@ public class LightSwitchController : MonoBehaviour
             }
         } 
     }
-
-    public void ToggleLights()
+    private void RotateFan()
+    {
+        if (fan != null)
+        {
+            fan.transform.Rotate(Vector3.forward * fanRotationSpeed * Time.deltaTime);
+        }
+    }
+        public void ToggleLights()
     {
         if (clickAudioSource != null && !clickAudioSource.isPlaying)
         {
