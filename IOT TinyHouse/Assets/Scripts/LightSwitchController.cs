@@ -21,9 +21,13 @@ public class LightSwitchController : MonoBehaviour
     private bool isPlayerMoving = false;
     private bool isFrontHouseLightOn = false;
 
+    public MqttLightController mqttController; // Reference to MQTT controller
+    public string roomName;
+    public string houseName = "middle";
+
     private void Start()
     {
-        ResetControlledLights();  // Turn off all switch-controlled lights at the start
+        ResetControlledLights();
     }
 
     private void Update()
@@ -132,6 +136,11 @@ public class LightSwitchController : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if (mqttController != null)
+        {
+            mqttController.PublishLightState(houseName, roomName, isLightOn);
         }
     }
 
