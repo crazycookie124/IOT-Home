@@ -6,13 +6,13 @@ using M2MqttUnity;
 
 public class MqttLightController : M2MqttUnityClient
 {
-    // References to LightSwitchController for each room
     public LightSwitchController frontSwitchController;
     public LightSwitchController kitchenSwitchController;
     public LightSwitchController bathroomSwitchController;
     public LightSwitchController bedroomSwitchController;
 
     private const string MQTT_TOPIC_SUB = "sandbox/fromMiddleHouse";
+    private const string MQTT_TOPIC_PUB = "sandbox/toMiddleHouse";
 
     protected override void SubscribeTopics()
     {
@@ -75,7 +75,7 @@ public class MqttLightController : M2MqttUnityClient
 
             if (targetRoom == null)
             {
-                Debug.LogError($"[MQTT] LightSwitchController for the room is not assigned!");
+                Debug.LogError("[MQTT] LightSwitchController for the room is not assigned!");
                 return;
             }
 
@@ -90,7 +90,6 @@ public class MqttLightController : M2MqttUnityClient
 
             Debug.Log($"[MQTT] Toggling light for {targetRoom.name}. Turn On: {turnOn}");
 
-            // Check current light state before toggling
             if ((turnOn && !targetRoom.isLightOn) || (turnOff && targetRoom.isLightOn))
             {
                 targetRoom.ToggleLights();
@@ -105,5 +104,12 @@ public class MqttLightController : M2MqttUnityClient
         {
             Debug.LogError("[MQTT] Error processing MQTT message: " + e.Message);
         }
+    }
+
+    public void PublishLightState(string house, string room, bool value)
+    {
+        string jsonMessage = $"{{\"house\":\"{house}\",\"room\":\"{room}\",\"component\":\"led\",\"value\":{(value ? 1 : 0)},\"msg\":\"LED {(value ? "on" : "off")}\"}}";
+        client.Publish(MQTT_TOPIC_PUB, System.Text.Encoding.UTF8.GetBytes(jsonMessage), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, false);
+        Debug.Log($"[MQTT] Published message: {jsonMessage}");
     }
 }
